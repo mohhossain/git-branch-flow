@@ -8,7 +8,7 @@ app.listen(3000, () => {
 // add some routes
 app.get("/api/users", (req, res, next) => {
   res.json(["Tony", "Lisa", "Michael", "Ginger", "Food"]);
-});// add cors
+}); // add cors
 const cors = require("cors");
 app.use(cors());
 
@@ -28,3 +28,10 @@ const routes = require("./routes/routes.js")(app);
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
+
+// Path: git-branch-flow/routes/routes.js
+module.exports = function (app) {
+  app.get("/api/users", (req, res, next) => {
+    res.json(["Tony", "Lisa", "Michael", "Ginger", "Food"]);
+  });
+};
