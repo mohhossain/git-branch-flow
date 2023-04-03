@@ -16,6 +16,12 @@ app.use(cors());
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
+// add another middleware
+app.use((req, res, next) => {
+  console.log("This is a middleware!");
+  next();
+});
+
 // add routes
 const routes = require("./routes/routes.js")(app);
 // add a greeting route
